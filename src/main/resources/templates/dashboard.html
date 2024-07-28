@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
 <head>
     <meta charset="UTF-8">
     <title>DashBord</title>
@@ -10,5 +11,8 @@
 
 <p>Click here for logout<a th:href="@{/logout}">Logout</a></p>
 <p>Back to <a th:href="@{/home}">Home</a></p>
+<div sec:authorize="hasRole('ROLE_ADMIN')">
+    <p>Click to see the Messages <a th:href="@{/displayMessages}"> Here! </a></p>
+</div>
 </body>
 </html>

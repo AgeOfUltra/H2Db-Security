@@ -11,5 +11,6 @@ public class StaticConfigure implements WebMvcConfigurer {
         registry.addViewController("/home").setViewName("home.html");
         registry.addViewController("/hello").setViewName("hello");
         registry.addViewController("/home/welcome").setViewName("welcome.html");
+//        registry.addViewController("/displayMessages").setViewName("displayMessages.html"); // this page is going to be a dynamic page, so we need to add define RequestMapping in Controller
     }
 }

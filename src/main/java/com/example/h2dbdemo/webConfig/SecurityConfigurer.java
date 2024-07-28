@@ -30,6 +30,9 @@ public class SecurityConfigurer {
                         .requestMatchers("/saveMessage").permitAll()
                         .requestMatchers("/login").permitAll()
                         .requestMatchers("/logout").permitAll()
+                        .requestMatchers("/holidays/**").permitAll()
+                        .requestMatchers("/displayMessages").hasRole("ADMIN")
+                        .requestMatchers("/closeMessage/**").hasRole("ADMIN")
                         .requestMatchers(PathRequest.toH2Console()).permitAll()) // saying to permit h2console page
                 .formLogin(login -> login.loginPage("/login").defaultSuccessUrl("/dashboard")
                         .failureUrl("/login?error=true").permitAll())
